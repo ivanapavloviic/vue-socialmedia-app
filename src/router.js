@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 
 import LoginPage from "./components/LoginPage.vue";
-
+import RegisterPage from './components/RegisterPage.vue'
 
 const routes = [
 
@@ -11,7 +11,11 @@ const routes = [
     component: LoginPage,
     name: "LoginPage",
     },
-  
+    {
+    path: "/signup",
+    component: RegisterPage,
+    name: "RegisterPage",
+    },
   // { path: "/test", name:'testcomponent', component: TestComponent, meta: { requiredAuth: true,  isUserAdmin:true } },
 ];
 
