@@ -5,5 +5,5 @@
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { "email": "ivanapavlovic13@live.com", "password":"1111"}
   }
