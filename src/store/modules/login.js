@@ -1,52 +1,61 @@
 import axios from 'axios'
-
-
-export const state = {
-    user: null,
-    error: null,
+const state = {
+   
+    user: null
   };
-  
-  export const mutations = {
-    setUser(state, user) {
+  const getters = {
+    isLoggedIn: state => state.user !== null
+  }
+  const mutations = {
+    SET_LOGIN_STATUS(state, isLoggedIn) {
+      state.isLoggedIn = isLoggedIn;
+    },
+    SET_USER(state, user) {
       state.user = user;
     },
-    setError(state, error) {
-      state.error = error;
-    },
-    clearError(state) {
-      state.error = null;
-    },
+
+        SET_USER_DATA(state, userData) {
+          state.user = userData
+        }
+  
   };
   
-  export const actions = {
-    async loginUser({ commit }, { email, password }) {
-      commit("clearError");
-  
+  const actions = {
+    async login({ commit }, { username, password }) {
       try {
-        const response = await axios.post("http://localhost:3000/profile", {
-          email,
-          password,
+        const response = await axios.get('http://localhost:3000/users', {
+          params: {
+            username,
+            password
+          }
         });
-        const user = response.data;
-  
-        commit("setUser", user);
-        return user;
+        if (response.data.length > 0) {
+          const user = response.data[0];
+          commit('SET_LOGIN_STATUS', true);
+          commit('SET_USER', user);
+          return user;
+        } else {
+          commit('SET_LOGIN_STATUS', false);
+          return null;
+        }
       } catch (error) {
-        commit("setError", error.response.data.message);
-        throw error;
+        console.error(error);
+        commit('SET_LOGIN_STATUS', false);
+        return null;
       }
     },
-    logoutUser({ commit }) {
-      this.$axios.post("/api/logout").then(() => {
-        commit("setUser", null);
-      });
-    },
+    async logout({ commit }) {
+      commit('SET_LOGIN_STATUS', false);
+      commit('SET_USER', null);
+    }
   };
+
+  
   
   export default {
-    namespaced: true,
     state,
-    actions,
     mutations,
+    actions,
+    getters
   };
   

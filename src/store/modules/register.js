@@ -1,35 +1,35 @@
-import axios from "axios";
+import axios from 'axios';
+
+const state = {
+  signupSuccess: false
+};
+
+const mutations = {
+  SET_SIGNUP_STATUS(state, signupSuccess) {
+    state.signupSuccess = signupSuccess;
+  }
+};
+
+const actions = {
+  async signup({ commit }, { username, password }) {
+    try {
+      const response = await axios.post('http://localhost:3000/users', {
+        username,
+        password
+      });
+      console.log(response)
+      commit('SET_SIGNUP_STATUS', true);
+      return true;
+    } catch (error) {
+      console.error(error);
+      commit('SET_SIGNUP_STATUS', false);
+      return false;
+    }
+  }
+};
 
 export default {
-  state: {
-    error: null,
-  },
-  mutations: {
-    setError(state, error) {
-      state.error = error;
-    },
-    clearError(state) {
-      state.error = null;
-    },
-  },
-  actions: {
-    async registerUser({ commit }, { name, email, password }) {
-      commit("clearError");
-
-      try {
-        const response = await axios.post("/api/register", {
-          name,
-          email,
-          password,
-        });
-        const user = response.data;
-
-        commit("setUser", user, { root: true });
-        return user;
-      } catch (error) {
-        commit("setError", error.response.data.message);
-        throw error;
-      }
-    },
-  },
+  state,
+  mutations,
+  actions
 };
