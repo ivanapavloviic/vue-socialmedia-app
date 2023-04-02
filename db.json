@@ -1,9 +1,99 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "email": "ivanapavlovic13@live.com", "password":"1111"}
-  }
+
+  "users": [
+    {
+      "id": 1,
+      "username": "johndoe",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "username": "janedoe",
+      "password": "password456"
+    },
+    {
+      "username": "johndoe",
+      "password": "password123",
+      "id": 3
+    },
+    {
+      "username": "johndoe",
+      "password": "password123",
+      "id": 4
+    },
+    {
+      "username": "johndoe",
+      "password": "password123",
+      "id": 5
+    },
+    {
+      "username": "johndoe",
+      "password": "password123",
+      "id": 6
+    },
+    {
+      "username": "",
+      "password": "13031995",
+      "id": 7
+    },
+    {
+      "username": "ivanapavloviic",
+      "password": "aaaa",
+      "id": 8
+    },
+    {
+      "username": "ivanapavloviic",
+      "password": "aaaa",
+      "id": 9
+    },
+    {
+      "username": "ivanapavlovic13@live.com",
+      "password": "ss",
+      "id": 10
+    },
+    {
+      "username": "ivanapavlovic13@live.com",
+      "password": "aaaa",
+      "id": 11
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "First post",
+      "body": "This is the body of the first post.",
+      "userId": 1,
+      "createdAt": "2023-03-31T12:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Second post",
+      "body": "This is the body of the second post.",
+      "userId": 2,
+      "createdAt": "2023-04-01T12:00:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "This is the first comment on the first post.",
+      "postId": 1,
+      "userId": 2,
+      "createdAt": "2023-03-31T13:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "body": "This is the second comment on the first post.",
+      "postId": 1,
+      "userId": 1,
+      "createdAt": "2023-03-31T14:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "body": "This is the first comment on the second post.",
+      "postId": 2,
+      "userId": 1,
+      "createdAt": "2023-04-01T13:00:00.000Z"
+    }
+  ]
+}
