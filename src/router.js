@@ -1,8 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 
+
 import LoginPage from "./components/LoginPage.vue";
-import RegisterPage from './components/RegisterPage.vue'
+import RegisterPage from './components/RegisterPage.vue';
+import HomePage from './components/HomePage.vue';
+import { createStore } from 'vuex';
+import login from './store/modules/login';
+
+const store = createStore({
+  modules: {
+    login
+  }
+});
 
 const routes = [
 
@@ -16,11 +26,28 @@ const routes = [
     component: RegisterPage,
     name: "RegisterPage",
     },
+      {
+      path: "/home",
+      component: HomePage,
+      name: "HomePage",
+      },
+    
   // { path: "/test", name:'testcomponent', component: TestComponent, meta: { requiredAuth: true,  isUserAdmin:true } },
 ];
 
-export const routeConfig = createRouter({
+const router = createRouter({
   history: createWebHistory(),
-  routes: routes,
-  mode:'hash'
+  routes
 });
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  if (requiresAuth && !store.state.isLoggedIn) {
+    next('/login');
+  } else {
+    next();
+  }
+});
+
+export default router

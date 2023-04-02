@@ -4,13 +4,10 @@
         <h1 class="text-3xl font-bold mb-6">Register</h1>
         <form @submit.prevent="registerUser">
           <div class="mb-4">
-            <label class="block font-bold mb-2" for="name">Name</label>
-            <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" v-model="name" required>
+            <label class="block font-bold mb-2" for="username">Name</label>
+            <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" type="text" name="username" v-model="username" required>
           </div>
-          <div class="mb-4">
-            <label class="block font-bold mb-2" for="email">Email</label>
-            <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" type="email" name="email" v-model="email" required>
-          </div>
+       
           <div class="mb-4">
             <label class="block font-bold mb-2" for="password">Password</label>
             <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" v-model="password" required>
@@ -27,32 +24,28 @@
   </template>
   
   <script>
+  import axios from 'axios'
     export default {
       data() {
         return {
-          name: '',
-          email: '',
+          username: '',
           password: '',
         };
       },
-      computed: {
-        error() {
-          return this.$store.state.register.error;
-        },
-      },
+     
       methods: {
         async registerUser() {
-          try {
-            await this.$store.dispatch('registerUser', {
-              name: this.name,
-              email: this.email,
-              password: this.password,
-            });
-            this.$router.push('/profile');
-          } catch (error) {
-            console.error(error);
-          }
-        },
+      try {
+        const response = await axios.post('http://localhost:3000/users', {
+          username: this.username,
+          password: this.password
+        });
+        console.log(response.data);
+        this.$router.push('/login');
+      } catch (error) {
+        console.error(error);
+      }
+    }
       },
     };
   </script>
