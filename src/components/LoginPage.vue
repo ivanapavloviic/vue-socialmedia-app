@@ -67,6 +67,7 @@ import axios from 'axios';
     if (response.data.length > 0) {
       this.$store.commit('SET_LOGIN_STATUS', true);
       this.$store.commit('SET_USER_DATA', response.data[0]);
+      this.$store. commit('SET_USER', this.username);
       this.$router.push('/home');
     } else {
       this.error = 'Invalid username or password';

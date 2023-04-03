@@ -1,7 +1,6 @@
 import axios from 'axios'
 const state = {
-   
-    user: null
+       user: null
   };
   const getters = {
     isLoggedIn: state => state.user !== null
@@ -29,10 +28,14 @@ const state = {
             password
           }
         });
+       
+
         if (response.data.length > 0) {
           const user = response.data[0];
+          const userData = { username: username }
           commit('SET_LOGIN_STATUS', true);
           commit('SET_USER', user);
+          commit('SET_USER_DATA', userData);
           return user;
         } else {
           commit('SET_LOGIN_STATUS', false);
@@ -47,6 +50,8 @@ const state = {
     async logout({ commit }) {
       commit('SET_LOGIN_STATUS', false);
       commit('SET_USER', null);
+      commit('SET_USER_DATA', null)
+
     }
   };
 
@@ -54,8 +59,9 @@ const state = {
   
   export default {
     state,
+    getters,
     mutations,
     actions,
-    getters
+    
   };
   

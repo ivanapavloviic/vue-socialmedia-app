@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     isLoggedIn() {
-      return this.$store.state.isLoggedIn && this.$store.state.user !== null;
+      return this.$store.state.login.isLoggedIn && this.$store.state.login.user !== null;
     }
   },
   created() {

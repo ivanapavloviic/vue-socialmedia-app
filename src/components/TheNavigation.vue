@@ -22,18 +22,20 @@
  export default {
   computed: {
     isLoggedIn() {
-      return this.$store.state.isLoggedIn && this.$store.state.user !== null;
+      return this.$store.state.login.isLoggedIn && this.$store.state.login.user !== null;
   }
   },
-  // watch: {
-  //   isLoggedIn() {
-  //     this.$forceUpdate();
-  //   }
-  // },
+  watch: {
+    isLoggedIn() {
+      this.$forceUpdate();
+    }
+  },
   methods: {
     logout() {
+ 
     this.$store.commit('SET_USER_DATA', null);
     this.$store.commit('SET_LOGIN_STATUS', false);
+    this.$store.commit('SET_USER', null);
     this.$router.push('/login');
   }
   }

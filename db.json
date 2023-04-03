@@ -1,5 +1,4 @@
 {
-
   "users": [
     {
       "id": 1,
@@ -94,6 +93,11 @@
       "postId": 2,
       "userId": 1,
       "createdAt": "2023-04-01T13:00:00.000Z"
+    },
+    {
+      "body": "Novi komentar",
+      "createdAt": "2023-04-03T11:39:37.392Z",
+      "id": 4
     }
   ]
 }
