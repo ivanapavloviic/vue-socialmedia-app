@@ -4,6 +4,9 @@
       <div class="flex items-center">
         <router-link to="/" class="font-bold text-lg text-blue-500">Home</router-link>
       </div>
+      <div v-if="isLoggedIn" class="flex items-center">
+        <router-link :to="userProfilePath" class="font-bold text-lg text-blue-500">Profile</router-link>
+      </div>
       <div class="flex items-center">
         <template v-if="isLoggedIn">
           <button @click="logout" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Logout</button>
@@ -23,7 +26,11 @@
   computed: {
     isLoggedIn() {
       return this.$store.state.login.isLoggedIn && this.$store.state.login.user !== null;
-  }
+  },
+  userProfilePath() {
+      const userId = this.$store.state.login.userId;
+      return `/user/${userId}`;
+    },
   },
   watch: {
     isLoggedIn() {
@@ -36,6 +43,8 @@
     this.$store.commit('SET_USER_DATA', null);
     this.$store.commit('SET_LOGIN_STATUS', false);
     this.$store.commit('SET_USER', null);
+    this.$store.commit('clearUser');
+
     this.$router.push('/login');
   }
   }

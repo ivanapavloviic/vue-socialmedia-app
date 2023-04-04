@@ -4,7 +4,9 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import LoginPage from "./components/LoginPage.vue";
 import RegisterPage from './components/RegisterPage.vue';
-import HomePage from './components/HomePage.vue';
+import PostList from './components/PostList.vue'
+import UserProfile from './components/UserProfile.vue';
+
 import { createStore } from 'vuex';
 import login from './store/modules/login';
 
@@ -23,16 +25,24 @@ const routes = [
     meta:{requiresGuest:true}
     },
     {
+      path: '/user/:userId',
+      name: 'user-profile',
+      component: UserProfile,
+      props: route => ({ userId: Number(route.params.userId) }),
+      meta:{requiresAuth:true}
+    },
+    {
     path: "/signup",
     component: RegisterPage,
     name: "RegisterPage",
       meta:{requiresGuest:true}
     },
+      
       {
-      path: "/home",
-      component: HomePage,
-      name: "HomePage",
-      meta:{requiresAuth:true}
+        path: '/',
+        name: 'PostList',
+        component: PostList,
+        meta:{requiresAuth:true}
       },
     
   // { path: "/test", name:'testcomponent', component: TestComponent, meta: { requiredAuth: true,  isUserAdmin:true } },
@@ -50,7 +60,7 @@ router.beforeEach((to, from, next) => {
   if (requiresAuth && !store.state.login.isLoggedIn) {
     next('/login');
   } else if(requiresGuest && store.state.login.isLoggedIn ){
-    next('/home');
+    next('/');
   }else {
     next();
   }

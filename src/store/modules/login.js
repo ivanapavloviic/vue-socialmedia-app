@@ -1,6 +1,7 @@
 import axios from 'axios'
 const state = {
-       user: null
+       user: null,
+       userId:null
   };
   const getters = {
     isLoggedIn: state => state.user !== null
@@ -12,20 +13,27 @@ const state = {
     SET_USER(state, user) {
       state.user = user;
     },
+    SET_USER_ID(state, userId){
+      state.userId=userId
+    },
 
         SET_USER_DATA(state, userData) {
           state.user = userData
-        }
+        },
+        clearUser(state) {
+          state.user = null;
+        },
   
   };
   
   const actions = {
-    async login({ commit }, { username, password }) {
+    async login({ commit }, { username, password, userId }) {
       try {
         const response = await axios.get('http://localhost:3000/users', {
           params: {
             username,
-            password
+            password,
+            userId
           }
         });
        
@@ -33,8 +41,11 @@ const state = {
         if (response.data.length > 0) {
           const user = response.data[0];
           const userData = { username: username }
+          const userId={userId:userId}
+          console.log(response.data[0])
           commit('SET_LOGIN_STATUS', true);
           commit('SET_USER', user);
+          commit('SET_USER_ID',userId)
           commit('SET_USER_DATA', userData);
           return user;
         } else {
@@ -50,6 +61,7 @@ const state = {
     async logout({ commit }) {
       commit('SET_LOGIN_STATUS', false);
       commit('SET_USER', null);
+      commit('SET_USER_ID',null);
       commit('SET_USER_DATA', null)
 
     }

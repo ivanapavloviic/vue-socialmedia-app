@@ -59,45 +59,65 @@
   "posts": [
     {
       "id": 1,
-      "title": "First post",
-      "body": "This is the body of the first post.",
       "userId": 1,
-      "createdAt": "2023-03-31T12:00:00.000Z"
+      "title": "My first post",
+      "content": "This is the body of my first post."
     },
     {
       "id": 2,
-      "title": "Second post",
-      "body": "This is the body of the second post.",
       "userId": 2,
-      "createdAt": "2023-04-01T12:00:00.000Z"
+      "title": "My second post",
+      "content": "This is the body of my second post."
+    },
+    {
+      "userId": 1,
+      "title": "aaaa",
+      "content": "aaaa",
+      "id": 3
     }
   ],
   "comments": [
     {
       "id": 1,
-      "body": "This is the first comment on the first post.",
+      "userId": 1,
       "postId": 1,
-      "userId": 2,
-      "createdAt": "2023-03-31T13:00:00.000Z"
+      "content": "This is a comment on the first post."
     },
     {
       "id": 2,
-      "body": "This is the second comment on the first post.",
+      "userId": 2,
       "postId": 1,
-      "userId": 1,
-      "createdAt": "2023-03-31T14:00:00.000Z"
+      "content": "This is another comment on the first post."
     },
     {
-      "id": 3,
-      "body": "This is the first comment on the second post.",
-      "postId": 2,
-      "userId": 1,
-      "createdAt": "2023-04-01T13:00:00.000Z"
-    },
-    {
-      "body": "Novi komentar",
-      "createdAt": "2023-04-03T11:39:37.392Z",
+      "content": "novi komentar",
+      "createdAt": "2023-04-03T23:14:08.003Z",
       "id": 4
+    },
+    {
+      "content": "novi komentar na dva",
+      "createdAt": "2023-04-03T23:14:18.267Z",
+      "id": 5
+    },
+    {
+      "content": "aaaa",
+      "createdAt": "2023-04-03T23:29:56.673Z",
+      "id": 6
+    },
+    {
+      "postId": 1,
+      "content": "komentar na prvom postu",
+      "id": 7
+    },
+    {
+      "postId": 2,
+      "content": "aaaa",
+      "id": 8
+    },
+    {
+      "postId": 3,
+      "content": "aaa",
+      "id": 9
     }
   ]
 }

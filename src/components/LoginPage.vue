@@ -61,14 +61,16 @@ import axios from 'axios';
     const response = await axios.get('http://localhost:3000/users', {
       params: {
         username: this.username,
-        password: this.password
+        password: this.password,
       }
     });
     if (response.data.length > 0) {
+      console.log(response.data[0])
       this.$store.commit('SET_LOGIN_STATUS', true);
       this.$store.commit('SET_USER_DATA', response.data[0]);
       this.$store. commit('SET_USER', this.username);
-      this.$router.push('/home');
+      this.$store.commit('SET_USER_ID',response.data[0].id)
+      this.$router.push('/');
     } else {
       this.error = 'Invalid username or password';
     }
