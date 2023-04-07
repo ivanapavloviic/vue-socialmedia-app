@@ -54,70 +54,135 @@
       "username": "ivanapavlovic13@live.com",
       "password": "aaaa",
       "id": 11
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "name": "Testni korisnik",
+      "email": "test@test.test",
+      "id": 12
     }
   ],
   "posts": [
     {
       "id": 1,
       "userId": 1,
-      "title": "My first post",
-      "content": "This is the body of my first post."
+      "title": "My first post aaa",
+      "content": "This is the body of my first post.",
+      "createdAt": "2022-05-01T12:30:00.000Z"
     },
     {
       "id": 2,
       "userId": 2,
       "title": "My second post",
-      "content": "This is the body of my second post."
+      "content": "This is the body of my second post.",
+      "createdAt": "2022-05-01T12:30:00.000Z"
+    },
+    {
+      "title": "a",
+      "content": "aa",
+      "id": 6,
+      "createdAt": "2022-05-01T12:30:00.000Z"
     },
     {
       "userId": 1,
-      "title": "aaaa",
-      "content": "aaaa",
-      "id": 3
+      "title": "User john doe",
+      "content": "post",
+      "id": 7,
+      "createdAt": "2022-05-01T12:30:00.000Z"
+    },
+    {
+      "userId": 2,
+      "title": "id 2",
+      "content": "post",
+      "id": 8,
+      "createdAt": "2022-05-01T12:30:00.000Z"
+    },
+    {
+      "userId": 1,
+      "title": "Novi post",
+      "content": "test",
+      "id": 9,
+      "createdAt": "2022-05-01T12:30:00.000Z"
+    },
+    {
+      "userId": 1,
+      "title": "John Doe's post edit",
+      "content": "Post content",
+      "id": 10,
+      "createdAt": "2022-05-01T12:30:00.000Z"
+    },
+    {
+      "userId": 1,
+      "title": "John doe's new post",
+      "content": "new",
+      "createdAt": "2023-04-07T12:29:29.236Z",
+      "id": 11
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "postId": 1,
+      "content": "aaa",
       "userId": 1,
-      "postId": 1,
-      "content": "This is a comment on the first post."
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "postId": 1,
-      "content": "This is another comment on the first post."
-    },
-    {
-      "content": "novi komentar",
-      "createdAt": "2023-04-03T23:14:08.003Z",
-      "id": 4
-    },
-    {
-      "content": "novi komentar na dva",
-      "createdAt": "2023-04-03T23:14:18.267Z",
-      "id": 5
-    },
-    {
-      "content": "aaaa",
-      "createdAt": "2023-04-03T23:29:56.673Z",
-      "id": 6
-    },
-    {
-      "postId": 1,
-      "content": "komentar na prvom postu",
-      "id": 7
+      "id": 13,
+      "username": "johndoe"
     },
     {
       "postId": 2,
-      "content": "aaaa",
-      "id": 8
+      "content": "sss",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 14
     },
     {
-      "postId": 3,
+      "postId": 1,
+      "content": "eeee",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 15
+    },
+    {
+      "postId": 8,
       "content": "aaa",
-      "id": 9
+      "userId": 1,
+      "username": "johndoe",
+      "id": 16
+    },
+    {
+      "postId": 2,
+      "content": "aaa",
+      "userId": 2,
+      "username": "janedoe",
+      "id": 17
+    },
+    {
+      "postId": 1,
+      "content": "aaa",
+      "userId": 2,
+      "username": "janedoe",
+      "id": 18
+    },
+    {
+      "postId": 2,
+      "content": "eeee",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 20
+    },
+    {
+      "postId": 1,
+      "content": "aaa",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 21
+    },
+    {
+      "postId": 2,
+      "content": "aaa",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 22
     }
   ]
 }
