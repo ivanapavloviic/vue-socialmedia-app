@@ -26,7 +26,6 @@
             type="password"
             placeholder="**********"
           >
-          <p class="text-red-500 text-xs italic">Please choose a password.</p>
         </div>
         <div class="flex items-center justify-between">
           <button
@@ -36,9 +35,7 @@
           >
             Log in
           </button>
-          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-            Forgot Password?
-          </a>
+        
         </div>
       </form>
     </div>
@@ -65,7 +62,6 @@ import axios from 'axios';
       }
     });
     if (response.data.length > 0) {
-      console.log(response.data[0])
       this.$store.commit('SET_LOGIN_STATUS', true);
       this.$store.commit('SET_USER_DATA', response.data[0]);
       this.$store. commit('SET_USER', this.username);

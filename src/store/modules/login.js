@@ -4,7 +4,7 @@ const state = {
        userId:null
   };
   const getters = {
-    isLoggedIn: state => state.user !== null
+    isLoggedIn: state => state.user !== null,
   }
   const mutations = {
     SET_LOGIN_STATUS(state, isLoggedIn) {
@@ -42,7 +42,6 @@ const state = {
           const user = response.data[0];
           const userData = { username: username }
           const userId={userId:userId}
-          console.log(response.data[0])
           commit('SET_LOGIN_STATUS', true);
           commit('SET_USER', user);
           commit('SET_USER_ID',userId)
