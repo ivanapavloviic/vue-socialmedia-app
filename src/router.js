@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import LoginPage from "./components/LoginPage.vue";
 import RegisterPage from './components/RegisterPage.vue';
-import PostList from './components/PostList.vue'
+import HomePage from './components/HomePage.vue'
 import UserProfile from './components/UserProfile.vue';
 
 import { createStore } from 'vuex';
@@ -40,8 +40,8 @@ const routes = [
       
       {
         path: '/',
-        name: 'PostList',
-        component: PostList,
+        name: 'HomePage',
+        component: HomePage,
         meta:{requiresAuth:true}
       },
     
