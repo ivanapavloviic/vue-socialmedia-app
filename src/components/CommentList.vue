@@ -3,7 +3,10 @@
     <div v-for="comment in filteredComments" :key="comment.id" class="bg-gray-100 p-4 rounded mb-2">
       <comment-item
         :comment="comment"
-        @deleteComment="deleteComment" 
+        :commentId="comment.id"
+        :author="comment.username"
+        @deleteComment="canDeleteComment(comment) && deleteComment(comment.id)" 
+        @updateComment="updateComment"
       ></comment-item>
     </div>
   </div>
@@ -35,6 +38,9 @@ export default {
       }
       return [];
     },
+    loggedInUser() {
+      return this.$store.state.login.user;
+    }
   },
   methods: {
     deleteComment(commentId) {
@@ -43,6 +49,18 @@ export default {
     addComment(newComment) {
       this.$store.dispatch('addComment', newComment);
     },
+    updateComment(updatedComment, commentId) {
+    const index = this.comments.findIndex(comment => comment.id === commentId);
+    if (index >= 0) {
+      this.comments[index] = updatedComment;
+      this.$store.dispatch('updateComment', updatedComment);
+    }
+  },
+    canDeleteComment(comment) {
+      console.log(this.loggedInUser)
+      //&& comment.post.username === this.loggedInUser add for the user who is owner of the post
+      return (comment.username === this.loggedInUser );
+    }
   },
   created() {
     this.$store.dispatch('fetchComments');
