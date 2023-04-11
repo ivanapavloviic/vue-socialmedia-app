@@ -146,6 +146,13 @@
       "content": "new",
       "createdAt": "2023-04-07T12:29:29.236Z",
       "id": 11
+    },
+    {
+      "userId": 1,
+      "title": "",
+      "content": "Koja je razlika izmedju",
+      "createdAt": "2023-04-11T12:06:29.983Z",
+      "id": 12
     }
   ],
   "comments": [

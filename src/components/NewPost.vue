@@ -1,17 +1,47 @@
 <template>
-  <form @submit.prevent="createPost" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="title">Title</label>
-      <input v-model="post.title" id="title" type="text" placeholder="Post title" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+  <div class="flex items-start px-4 py-3 border-b border-gray-200">
+    <img
+      class="w-10 h-10 rounded-full mr-3"
+      src="../../src/assets/user.jpg"
+      alt="User avatar"
+    >
+    <div class="flex-1">
+      <textarea
+        v-model="post.content"
+        class="w-full py-2 text-gray-700 leading-tight focus:outline-none resize-none"
+        rows="2"
+        placeholder="What's happening?"
+      ></textarea>
+      <div class="flex justify-between items-center mt-3">
+        <div>
+          <button
+            v-if="post.content.length > 0"
+            type="button"
+            class="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-2 font-medium"
+            @click="createPost"
+          >
+            Tweet
+          </button>
+          <button
+            v-else
+            type="button"
+            class="bg-blue-500 opacity-50 text-white rounded-full px-6 py-2 font-medium cursor-not-allowed"
+            disabled
+          >
+            Tweet
+          </button>
+        </div>
+        <div class="flex items-center">
+          <div class="mr-4">
+            <i class="far fa-image"></i>
+          </div>
+          <div>
+            <i class="fas fa-chart-bar"></i>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="content">Content</label>
-      <textarea v-model="post.content" id="content" placeholder="Post content" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" rows="6"></textarea>
-    </div>
-    <div class="flex items-center justify-between">
-      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">Create Post</button>
-    </div>
-  </form>
+  </div>
 </template>
 
 

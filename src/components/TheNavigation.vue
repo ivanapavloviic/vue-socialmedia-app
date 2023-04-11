@@ -20,7 +20,7 @@
         <div class="flex items-center">
           <template v-if="isLoggedIn">
             <div class="flex-shrink-0">
-              <router-link :to="userProfilePath" class="font-bold text-xl text-white">              <img class="h-10 w-10 rounded-full" src="https://t4.ftcdn.net/jpg/02/17/34/67/360_F_217346796_TSg5VcYjsFxZtIDK6Qdctg3yqAapG7Xa.jpg" alt="Profile picture">
+              <router-link :to="userProfilePath" class="font-bold text-xl text-white">              <img class="h-10 w-10 rounded-full" src="../../src/assets/user.jpg" alt="Profile picture">
 </router-link>
             </div>
             <div class="ml-4">
