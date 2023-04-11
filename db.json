@@ -61,6 +61,34 @@
       "name": "Testni korisnik",
       "email": "test@test.test",
       "id": 12
+    },
+    {
+      "username": "ivanapavloviic",
+      "password": "sss",
+      "name": "ivanapavloviic",
+      "email": "aaa@a.com",
+      "id": 13
+    },
+    {
+      "username": "johndoe",
+      "password": "password123",
+      "name": "johndoe",
+      "email": "johndoe@com.com",
+      "id": 14
+    },
+    {
+      "username": "ivanapavloviic",
+      "password": "sss",
+      "name": "ivanapavloviic",
+      "email": "aa@ss.com",
+      "id": 15
+    },
+    {
+      "username": "ivanapavloviic",
+      "password": "sss",
+      "name": "ivanapavloviic",
+      "email": "aa@ss.com",
+      "id": 16
     }
   ],
   "posts": [
