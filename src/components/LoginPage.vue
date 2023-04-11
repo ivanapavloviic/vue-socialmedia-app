@@ -77,7 +77,7 @@ export default {
           this.error = 'Invalid username or password';
         }
       } catch (error) {
-        console.error(error);
+        this.$showToast('An error occurred while trying to log in. Please try again later.', 'error');
       }
     },
   },
