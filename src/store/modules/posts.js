@@ -72,8 +72,10 @@ const  state= {
     //   commit('ADD_POST', response.data);
     // },
     async createPost({ commit, rootState }, post) {
-      const userId = rootState.login.userId; // Get userId from login module state
-      const postWithUserId = { ...post, userId }; // Create a new object with userId
+      const userId = rootState.login.userId; 
+      const username = rootState.login.user // Get userId from login module state
+      // Get userId from login module state
+      const postWithUserId = { ...post, userId, username}; // Create a new object with userId
       const response = await axios.post('http://localhost:3000/posts', postWithUserId);
       commit('ADD_POST', response.data);
     },

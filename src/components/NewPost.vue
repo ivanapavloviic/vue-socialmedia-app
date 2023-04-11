@@ -31,14 +31,7 @@
             Tweet
           </button>
         </div>
-        <div class="flex items-center">
-          <div class="mr-4">
-            <i class="far fa-image"></i>
-          </div>
-          <div>
-            <i class="fas fa-chart-bar"></i>
-          </div>
-        </div>
+      
       </div>
     </div>
   </div>

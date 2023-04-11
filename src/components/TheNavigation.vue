@@ -7,13 +7,14 @@
             <img class="block lg:hidden h-8 w-auto" src="../../src/assets/logo.png" alt="Logo">
             <img class="hidden lg:block h-8 w-auto" src="../../src/assets/logo.png" alt="Logo">
           </router-link>
-        </div>
-        <div class="hidden md:flex md:items-center md:ml-6"  v-if="isLoggedIn">
           <div class="flex space-x-4">
             <router-link to="/" class="text-white hover:bg-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</router-link>
           
           </div>
-          <div class="ml-4 flex items-center md:ml-6">
+        </div>
+        <div class="hidden md:flex md:items-center md:ml-8"  v-if="isLoggedIn">
+         
+          <div class="ml-4 flex items-center md:ml-8">
             <search-bar class="border border-white rounded-full px-3 py-2 w-64" />
           </div>
         </div>

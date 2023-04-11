@@ -93,13 +93,6 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "userId": 1,
-      "title": "My first post aaa",
-      "content": "This is the body of my first post.",
-      "createdAt": "2022-05-01T12:30:00.000Z"
-    },
-    {
       "id": 2,
       "userId": 2,
       "title": "My second post",
@@ -113,13 +106,6 @@
       "createdAt": "2022-05-01T12:30:00.000Z"
     },
     {
-      "userId": 1,
-      "title": "User john doe",
-      "content": "post",
-      "id": 7,
-      "createdAt": "2022-05-01T12:30:00.000Z"
-    },
-    {
       "userId": 2,
       "title": "id 2",
       "content": "post",
@@ -128,54 +114,20 @@
     },
     {
       "userId": 1,
-      "title": "Novi post",
-      "content": "test",
-      "id": 9,
-      "createdAt": "2022-05-01T12:30:00.000Z"
-    },
-    {
-      "userId": 1,
-      "title": "John Doe's post edit",
-      "content": "Post content",
-      "id": 10,
-      "createdAt": "2022-05-01T12:30:00.000Z"
-    },
-    {
-      "userId": 1,
-      "title": "John doe's new post",
-      "content": "new",
-      "createdAt": "2023-04-07T12:29:29.236Z",
-      "id": 11
-    },
-    {
-      "userId": 1,
       "title": "",
-      "content": "Koja je razlika izmedju",
-      "createdAt": "2023-04-11T12:06:29.983Z",
-      "id": 12
+      "content": "aaa",
+      "createdAt": "2023-04-11T12:25:37.797Z",
+      "username": "johndoe",
+      "id": 13
     }
   ],
   "comments": [
-    {
-      "postId": 1,
-      "content": "aaa",
-      "userId": 1,
-      "id": 13,
-      "username": "johndoe"
-    },
     {
       "postId": 2,
       "content": "sss",
       "userId": 1,
       "username": "johndoe",
       "id": 14
-    },
-    {
-      "postId": 1,
-      "content": "eeee",
-      "userId": 1,
-      "username": "johndoe",
-      "id": 15
     },
     {
       "postId": 8,
@@ -192,25 +144,11 @@
       "id": 17
     },
     {
-      "postId": 1,
-      "content": "aaa",
-      "userId": 2,
-      "username": "janedoe",
-      "id": 18
-    },
-    {
       "postId": 2,
       "content": "eeee",
       "userId": 1,
       "username": "johndoe",
       "id": 20
-    },
-    {
-      "postId": 1,
-      "content": "aaa",
-      "userId": 1,
-      "username": "johndoe",
-      "id": 21
     },
     {
       "postId": 2,

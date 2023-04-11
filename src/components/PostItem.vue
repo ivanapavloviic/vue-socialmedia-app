@@ -1,24 +1,34 @@
 <template>
-  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div v-if="!editing">
-      <h3 class="font-bold text-xl mb-2 text-blue-800">{{ post.title }}</h3>
-      <p>{{ post.content }}</p>
-      <div class="flex items-center justify-end mt-4">
-        <button v-if="canEditOrDelete" @click="editing = true" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2 focus:outline-none focus:shadow-outline">Edit</button>
-        <button  v-if="canEditOrDelete" @click="$emit('deletePost', post.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">Delete</button>
+  <div class="bg-white rounded-lg border border-gray-300 shadow-md p-4 mb-4">
+    <div class="flex items-center mb-2">
+      <img class="w-12 h-12 rounded-full mr-4" src="../../src/assets/user.jpg" alt="User avatar">
+      <div>
+        <span class="text-gray-600 text-sm">{{ post.username }}</span>
       </div>
+    </div>
+    <div v-if="!editing">     
+      <p class="text-base">{{ post.content }}</p>
+      <div class="flex items-center justify-end mt-4">
+        <button v-if="canEditOrDelete" @click="editing = true" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2 focus:outline-none focus:shadow-outline">
+          <i class="fas fa-edit"></i>
+        </button>
+        <button v-if="canEditOrDelete" @click="$emit('deletePost', post.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+
       <comment-list :postId="post.id"></comment-list>
     </div>
     <div v-else>
-      <input v-model="updatedTitle" placeholder="Title" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4">
       <textarea v-model="updatedContent" placeholder="Content" class="shadow appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4" rows="6"></textarea>
       <div class="flex items-center justify-end">
-        <button @click="savePost" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2 focus:outline-none focus:shadow-outline">Save</button>
-        <button @click="cancelEdit" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full mr-2 focus:outline-none focus:shadow-outline">Cancel</button>
+        <button @click="savePost" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-2 focus:outline-none focus:shadow-outline hover:shadow-md">Save</button>
+        <button @click="cancelEdit" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full mr-2 focus:outline-none focus:shadow-outline hover:shadow-md">Cancel</button>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 import CommentList from './CommentList.vue';
 
