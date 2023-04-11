@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-
+import { API_URL } from "../../../src/.env.js";
 
 const state = {
   isLoggedIn: false,
@@ -27,7 +27,8 @@ const mutations = {
 const actions = {
   async login({ commit }, { username, password }) {
     try {
-      const response = await axios.get('http://localhost:3000/users', {
+      const response = await axios.get(
+        `${API_URL}/users`, {
         params: {
           username,
           password
@@ -54,7 +55,7 @@ const actions = {
   },
   async fetchPosts({ commit }) {
     try {
-      const response = await axios.get('http://localhost:3000/posts?_expand=user&_embed=comments');
+      const response = await axios.get(`${API_URL}/posts?_expand=user&_embed=comments`);
       commit('SET_POSTS', response.data);
     } catch (error) {
       console.error(error);
@@ -62,7 +63,7 @@ const actions = {
   },
   async fetchComments({ commit }) {
     try {
-      const response = await axios.get('http://localhost:3000/comments');
+      const response = await axios.get(`${API_URL}/comments`);
       commit('SET_COMMENTS', response.data);
     } catch (error) {
       console.error(error);

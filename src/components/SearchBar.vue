@@ -25,6 +25,7 @@
   
   <script>
 import axios from "axios";
+import { API_URL } from "../../src/.env.js";
 export default {
   data() {
     return {
@@ -50,7 +51,7 @@ export default {
   created() {
     // fetch all users from the API
     axios
-      .get("http://localhost:3000/users")
+      .get(`${API_URL}/users`)
       .then((response) => {
         this.users = response.data;
       })

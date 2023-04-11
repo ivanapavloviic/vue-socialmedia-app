@@ -32,6 +32,8 @@
   
   <script>
   import axios from 'axios'
+  import { API_URL } from "../../src/.env.js";
+
     export default {
       data() {
         return {
@@ -47,7 +49,7 @@
         async registerUser() {
   try {
    
-    const response = await axios.post('http://localhost:3000/users', {
+    const response = await axios.post(`${API_URL}/users`, {
       username: this.username,
       password: this.password,
       name: this.name,

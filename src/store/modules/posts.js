@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-
+import { API_URL } from "../../../src/.env.js";
 const  state= {
     users: [],
     posts: [],
@@ -55,15 +55,15 @@ const  state= {
   const actions= {
 
     async fetchUsers({ commit }) {
-      const response = await axios.get('http://localhost:3000/users');
+      const response = await axios.get(`${API_URL}/users`);
       commit('SET_USERS', response.data);
     },
     async fetchPosts({ commit }) {
-      const response = await axios.get('http://localhost:3000/posts');
+      const response = await axios.get(`${API_URL}/posts`);
       commit('SET_POSTS', response.data);
     },
     async fetchComments({ commit }) {
-      const response = await axios.get('http://localhost:3000/comments');
+      const response = await axios.get(`${API_URL}/comments`);
       commit('SET_COMMENTS', response.data);
     },
     // async createPost({ commit }, post) {
@@ -76,14 +76,14 @@ const  state= {
       const username = rootState.login.user // Get userId from login module state
       // Get userId from login module state
       const postWithUserId = { ...post, userId, username}; // Create a new object with userId
-      const response = await axios.post('http://localhost:3000/posts', postWithUserId);
+      const response = await axios.post(`${API_URL}/posts`, postWithUserId);
       commit('ADD_POST', response.data);
     },
     async addComment({ commit, rootState }, newComment) {
       const userId = rootState.login.userId;
       const username = rootState.login.user // Get userId from login module state
       const postWithUserId = { ...newComment, userId, username }; // Create a new object with userId
-      const response = await axios.post('http://localhost:3000/comments', postWithUserId);
+      const response = await axios.post(`${API_URL}/comments`, postWithUserId);
       commit('ADD_COMMENT', response.data);
     },
   //    async addComment({ commit }, newComment) {
@@ -92,19 +92,19 @@ const  state= {
   // },
   async updatePost({ commit }, post) {
     const { postId, ...postData } = post; // Extract postId and remove from postData
-    await axios.put(`http://localhost:3000/posts/${postId}`, postData);
+    await axios.put(`${API_URL}/posts/${postId}`, postData);
     commit('UPDATE_POST', post);
   },
   async updateComment({ commit }, updatedComment) {
-    const response = await axios.put(`http://localhost:3000/comments/${updatedComment.id}`, updatedComment);
+    const response = await axios.put(`${API_URL}/comments/${updatedComment.id}`, updatedComment);
     commit('UPDATE_COMMENT', response.data);
   },
     async deletePost({ commit }, postId) {
-      await axios.delete(`http://localhost:3000/posts/${postId}`);
+      await axios.delete(`${API_URL}/posts/${postId}`);
       commit('DELETE_POST', postId);
     },
     async deleteComment({ commit }, commentId) {
-      await axios.delete(`http://localhost:3000/comments/${commentId}`);
+      await axios.delete(`${API_URL}/comments/${commentId}`);
       commit('DELETE_COMMENT', commentId);
     },
   };

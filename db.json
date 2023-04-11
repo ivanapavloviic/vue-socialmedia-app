@@ -10,7 +10,6 @@
       "username": "janedoe",
       "password": "password456"
     }
-    
   ],
   "posts": [
     {
@@ -67,6 +66,27 @@
       "userId": 2,
       "username": "janedoe",
       "id": 26
+    },
+    {
+      "postId": 13,
+      "content": "aaa",
+      "userId": "1",
+      "username": "johndoe",
+      "id": 27
+    },
+    {
+      "postId": 13,
+      "content": "aaaa",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 28
+    },
+    {
+      "postId": 13,
+      "content": "aaa",
+      "userId": "1",
+      "username": "johndoe",
+      "id": 29
     }
   ]
 }

@@ -44,6 +44,7 @@
 
 <script>
 import axios from 'axios';
+import { API_URL } from "../../src/.env.js";
 
 export default {
   data() {
@@ -56,7 +57,7 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await axios.get('http://localhost:3000/users', {
+        const response = await axios.get(`${API_URL}/users`, {
           params: {
             username: this.username,
             password: this.password,

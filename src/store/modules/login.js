@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { API_URL } from "../../../src/.env.js";
 const state = {
   user: null,
   userId: null
@@ -30,7 +30,7 @@ const mutations = {
 const actions = {
   async login({ commit }, { username, password }) {
     try {
-      const response = await axios.get('http://localhost:3000/users', {
+      const response = await axios.get(`${API_URL}/users`, {
         params: {
           username,
           password,
@@ -74,7 +74,7 @@ const actions = {
     const userId = localStorage.getItem('userId');
     if (userId) {
       try {
-        const response = await axios.get(`http://localhost:3000/users/${userId}`);
+        const response = await axios.get(`${API_URL}/users/${userId}`);
         const user = response.data;
         commit('SET_USER', user);
         commit('SET_USER_ID', userId);
