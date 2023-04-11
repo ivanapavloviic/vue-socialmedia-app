@@ -9,109 +9,10 @@
       "id": 2,
       "username": "janedoe",
       "password": "password456"
-    },
-    {
-      "username": "johndoe",
-      "password": "password123",
-      "id": 3
-    },
-    {
-      "username": "johndoe",
-      "password": "password123",
-      "id": 4
-    },
-    {
-      "username": "johndoe",
-      "password": "password123",
-      "id": 5
-    },
-    {
-      "username": "johndoe",
-      "password": "password123",
-      "id": 6
-    },
-    {
-      "username": "",
-      "password": "13031995",
-      "id": 7
-    },
-    {
-      "username": "ivanapavloviic",
-      "password": "aaaa",
-      "id": 8
-    },
-    {
-      "username": "ivanapavloviic",
-      "password": "aaaa",
-      "id": 9
-    },
-    {
-      "username": "ivanapavlovic13@live.com",
-      "password": "ss",
-      "id": 10
-    },
-    {
-      "username": "ivanapavlovic13@live.com",
-      "password": "aaaa",
-      "id": 11
-    },
-    {
-      "username": "test",
-      "password": "test",
-      "name": "Testni korisnik",
-      "email": "test@test.test",
-      "id": 12
-    },
-    {
-      "username": "ivanapavloviic",
-      "password": "sss",
-      "name": "ivanapavloviic",
-      "email": "aaa@a.com",
-      "id": 13
-    },
-    {
-      "username": "johndoe",
-      "password": "password123",
-      "name": "johndoe",
-      "email": "johndoe@com.com",
-      "id": 14
-    },
-    {
-      "username": "ivanapavloviic",
-      "password": "sss",
-      "name": "ivanapavloviic",
-      "email": "aa@ss.com",
-      "id": 15
-    },
-    {
-      "username": "ivanapavloviic",
-      "password": "sss",
-      "name": "ivanapavloviic",
-      "email": "aa@ss.com",
-      "id": 16
     }
+    
   ],
   "posts": [
-    {
-      "id": 2,
-      "userId": 2,
-      "title": "My second post",
-      "content": "This is the body of my second post.",
-      "createdAt": "2022-05-01T12:30:00.000Z"
-    },
-    {
-      "title": "a",
-      "content": "aa",
-      "id": 6,
-      "createdAt": "2022-05-01T12:30:00.000Z"
-    },
-    {
-      "userId": 2,
-      "title": "id 2",
-      "content": "post",
-      "id": 8,
-      "createdAt": "2022-05-01T12:30:00.000Z"
-    },
     {
       "userId": 1,
       "title": "",
@@ -119,57 +20,53 @@
       "createdAt": "2023-04-11T12:25:37.797Z",
       "username": "johndoe",
       "id": 13
-    }
-  ],
-  "comments": [
+    },
     {
-      "postId": 2,
-      "content": "sss",
-      "userId": 1,
-      "username": "johndoe",
+      "userId": 2,
+      "title": "",
+      "content": "Jane doe tweet",
+      "createdAt": "2023-04-11T12:43:33.998Z",
+      "username": "janedoe",
       "id": 14
     },
     {
-      "postId": 8,
-      "content": "aaa",
-      "userId": 1,
-      "username": "johndoe",
-      "id": 16
-    },
-    {
-      "postId": 2,
-      "content": "aaa",
       "userId": 2,
+      "title": "",
+      "content": "Dva",
+      "createdAt": "2023-04-11T12:43:39.500Z",
       "username": "janedoe",
-      "id": 17
+      "id": 15
     },
     {
-      "postId": 2,
-      "content": "eeee",
-      "userId": 1,
-      "username": "johndoe",
-      "id": 20
-    },
-    {
-      "postId": 2,
-      "content": "aaa",
-      "userId": 1,
-      "username": "johndoe",
-      "id": 22
-    },
-    {
-      "postId": 2,
-      "content": "aa",
-      "userId": 1,
-      "username": "johndoe",
-      "id": 23
-    },
+      "userId": 2,
+      "title": "",
+      "content": "Tri",
+      "createdAt": "2023-04-11T12:43:41.855Z",
+      "username": "janedoe",
+      "id": 16
+    }
+  ],
+  "comments": [
     {
       "postId": 13,
       "content": "John Doe's comment",
       "userId": 1,
       "username": "johndoe",
       "id": 24
+    },
+    {
+      "postId": 15,
+      "content": "Jane doe",
+      "userId": 2,
+      "username": "janedoe",
+      "id": 25
+    },
+    {
+      "postId": 13,
+      "content": "Jane doe comment",
+      "userId": 2,
+      "username": "janedoe",
+      "id": 26
     }
   ]
 }
