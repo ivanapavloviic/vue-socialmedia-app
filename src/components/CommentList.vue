@@ -1,24 +1,50 @@
 <template>
-  <div>
-    <div v-for="comment in filteredComments" :key="comment.id" class="bg-gray-100 p-4 rounded mb-2">
-      <comment-item
-        :comment="comment"
-        :commentId="comment.id"
-        :author="comment.username"
-        @deleteComment="canDeleteComment(comment) && deleteComment(comment.id)" 
-        @updateComment="updateComment"
-      ></comment-item>
+  <div class="p-4">
+    <div class="flex justify-between mb-4">
+      <button
+        class="bg-white text-blue-400 hover:text-blue-500 border border-blue-400 rounded-full font-bold text-sm py-2 px-4 focus:outline-none focus:shadow-outline"
+        @click="showComments = !showComments"
+      >
+        {{ showComments ? 'Hide comments' : 'Show comments' }}
+      </button>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+        @click="showAddComment = !showAddComment"
+      >
+        Add comment
+      </button>
+    </div>
+    <div v-show="showAddComment">
+      <add-comment :postId="postId" @addComment="addComment" />
+    </div>
+    <div v-show="showComments">
+      <div v-for="comment in filteredComments" :key="comment.id" class="bg-gray-100 p-4 rounded mb-2">
+        <comment-item
+          :comment="comment"
+          :commentId="comment.id"
+          :author="comment.username"
+          @deleteComment="canDeleteComment(comment) && deleteComment(comment.id)" 
+          @updateComment="updateComment"
+        ></comment-item>
+      </div>
     </div>
   </div>
-        <add-comment :postId="postId" @addComment="addComment"></add-comment>
-
 </template>
+
+
+
 
 <script>
 import CommentItem from './CommentItem.vue';
 import AddComment from './AddComment.vue';
 
 export default {
+  data() {
+  return {
+    showAddComment: false,
+    showComments: false,
+  }
+},
   props: {
     postId: {
       type: Number,
