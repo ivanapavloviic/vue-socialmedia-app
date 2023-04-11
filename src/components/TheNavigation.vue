@@ -64,14 +64,17 @@
   },
   methods: {
     logout() {
- 
-    this.$store.commit('SET_USER_DATA', null);
-    this.$store.commit('SET_LOGIN_STATUS', false);
-    this.$store.commit('SET_USER', null);
-    this.$store.commit('clearUser');
+  this.$store.commit('SET_USER_DATA', null);
+  this.$store.commit('SET_LOGIN_STATUS', false);
+  this.$store.commit('SET_USER', null);
+  this.$store.commit('clearUser');
 
-    this.$router.push('/login');
-  }
+  // Remove userId from localStorage
+  localStorage.removeItem('userId');
+
+  this.$router.push('/login');
+}
+
   }
 };
 </script>
