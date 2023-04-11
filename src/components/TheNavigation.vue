@@ -20,11 +20,12 @@
         <div class="flex items-center">
           <template v-if="isLoggedIn">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/150" alt="Profile picture">
+              <router-link :to="userProfilePath" class="font-bold text-xl text-white">              <img class="h-10 w-10 rounded-full" src="https://t4.ftcdn.net/jpg/02/17/34/67/360_F_217346796_TSg5VcYjsFxZtIDK6Qdctg3yqAapG7Xa.jpg" alt="Profile picture">
+</router-link>
             </div>
             <div class="ml-4">
-              <div class="text-sm font-medium text-white">{{ username }}</div>
-              <div class="text-xs text-gray-300">{{ handle }}</div>
+              <div class="text-sm font-medium text-white"></div>
+              <div class="text-xs text-gray-300"></div>
             </div>
             <button @click="logout" class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Logout</button>
           </template>
