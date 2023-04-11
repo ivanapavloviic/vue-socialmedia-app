@@ -57,6 +57,8 @@ export default {
       })
       .catch((error) => {
         console.log(error);
+        this.$showToast('An error occurred while trying to signup. Please try again later.', 'error');
+
       });
   },
 };

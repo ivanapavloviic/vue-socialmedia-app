@@ -63,7 +63,7 @@
     if (error.response && error.response.status === 409) {
       this.error = 'User already exists';
     } else {
-      console.error(error);
+      this.$showToast('An error occurred while trying to signup. Please try again later.', 'error');
     }
   }
 }

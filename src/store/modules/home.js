@@ -59,6 +59,8 @@ const actions = {
       commit('SET_POSTS', response.data);
     } catch (error) {
       console.error(error);
+      this.$showToast('An error occurred while trying to fetch posts. Please try again later.', 'error');
+
     }
   },
   async fetchComments({ commit }) {
