@@ -24,11 +24,13 @@ export default {
     //TODO: fix sort posts
     posts() {
     return this.$store.state.posts.posts
-      .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
   },
+  sortedPosts() {
+      return this.posts.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    },
   filteredPosts() {
     const userId = this.$store.state.login.userId;
-    return this.posts.filter(post => post.userId === userId);
+    return this.sortedPosts.filter(post => post.userId === userId);
   },
 
 

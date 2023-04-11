@@ -43,6 +43,22 @@
       "createdAt": "2023-04-11T12:43:41.855Z",
       "username": "janedoe",
       "id": 16
+    },
+    {
+      "userId": 1,
+      "title": "",
+      "content": "Drugi",
+      "createdAt": "2023-04-11T14:06:36.826Z",
+      "username": "johndoe",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "title": "",
+      "content": "Novi",
+      "createdAt": "2023-04-11T14:11:42.186Z",
+      "username": "johndoe",
+      "id": 18
     }
   ],
   "comments": [
@@ -87,6 +103,20 @@
       "userId": "1",
       "username": "johndoe",
       "id": 29
+    },
+    {
+      "postId": 14,
+      "content": "1",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 30
+    },
+    {
+      "postId": 16,
+      "content": "Tri",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 31
     }
   ]
 }
