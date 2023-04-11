@@ -163,6 +163,13 @@
       "userId": 1,
       "username": "johndoe",
       "id": 23
+    },
+    {
+      "postId": 13,
+      "content": "John Doe's comment",
+      "userId": 1,
+      "username": "johndoe",
+      "id": 24
     }
   ]
 }
